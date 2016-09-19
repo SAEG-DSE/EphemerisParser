@@ -1,4 +1,3 @@
-import ephemeris
 from datetime import datetime
 from time import strptime
 
