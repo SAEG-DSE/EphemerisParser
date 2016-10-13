@@ -14,13 +14,13 @@ class EphemerisParserSpec(unittest.TestCase):
 
     def test_parsing_of_single_ephemeris(self):
     	self.Parser.parse(self.single_ephemeris)[0] |should| include_keys('flag', 'azimuth', 'elevation', 'time')
-    	self.Parser.parse(self.single_ephemeris) |should| have(2).ephemeris
+    	self.Parser.parse(self.single_ephemeris) |should| have(1).ephemeris
 
     def test_parsing_of_compact_ephemeris(self):
 		self.Parser.parse(self.ephemerisTestISSPass1_1SecCompact)[0] |should| include_keys('flag', 'azimuth', 'elevation', 'time')
-		self.Parser.parse(self.ephemerisTestISSPass1_1SecCompact) |should| have(34).ephemeris
+		self.Parser.parse(self.ephemerisTestISSPass1_1SecCompact) |should| have(17).ephemeris
 
     def test_parsing_of_complete_ephemeris(self):
 
 		self.Parser.parse(self.ephemerisTestISSPass1_1Sec)[0] |should| include_keys('flag', 'azimuth', 'elevation', 'time')
-		self.Parser.parse(self.ephemerisTestISSPass1_1Sec) |should| have(312).ephemeris
+		self.Parser.parse(self.ephemerisTestISSPass1_1Sec) |should| have(156).ephemeris
